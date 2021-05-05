@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.arnavi"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -28,6 +28,11 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+    maven { url 'https://mapbox.bintray.com/mapbox' }
+}
+
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -38,17 +43,11 @@ dependencies {
     }
     implementation 'com.mapbox.mapboxsdk:mapbox-android-core:3.1.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-telemetry:6.1.0'
-
+    implementation "com.mapbox.navigation:ui:1.5.1"
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:5.8.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.42.6'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-}
-
-allprojects {
-    repositories {
-        flatDir {
-            dirs 'libs'
-        }
-    }
 }
