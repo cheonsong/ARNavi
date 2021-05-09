@@ -13,8 +13,9 @@
         android:layout_height="match_parent"
         mapbox:mapbox_cameraTargetLat="35.14192258214305"
         mapbox:mapbox_cameraTargetLng="126.93213972479087"
-        mapbox:mapbox_cameraZoom="16"
-        />
+        mapbox:mapbox_cameraZoom="16">
+
+    </com.mapbox.mapboxsdk.maps.MapView>
 
     <Button
         android:id="@+id/startButton"
@@ -30,4 +31,18 @@
         android:textColor="@color/mapboxWhite"
         mapbox:layout_constraintStart_toStartOf="parent"
         mapbox:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/activateButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mapboxGrayLight"
+        android:enabled="false"
+        android:text="Activate Map"
+        android:textColor="@color/mapboxWhite"
+        app:layout_constraintBottom_toBottomOf="@+id/mapView"
+        app:layout_constraintEnd_toEndOf="parent"
+        mapbox:layout_constraintStart_toStartOf="parent"
+        mapbox:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
