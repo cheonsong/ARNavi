@@ -117,11 +117,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 origin = Point.fromLngLat(Lo, La);
                 getRoute_navi_walking(origin, destination);
                 activateButton.setVisibility(View.INVISIBLE);
+                startButton.setEnabled(true);
             }
         });
 
-        startButton = findViewById(R.id.startButton);
-        startButton.setEnabled(true);
+        startButton = findViewById(R.id.btnStartNavigation);
+        startButton.setEnabled(false);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
