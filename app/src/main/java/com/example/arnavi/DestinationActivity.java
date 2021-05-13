@@ -2,53 +2,50 @@ package com.example.arnavi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.AssetManager;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.arnavi.Data.BPDAO;
 import com.example.arnavi.Data.BuildingDAO;
 import com.example.arnavi.Data.BuildingDTO;
-import com.example.arnavi.Data.DBHelper;
 import com.example.arnavi.Data.MajorDAO;
 import com.example.arnavi.Data.MajorDTO;
-import com.example.arnavi.R;
+import com.example.arnavi.Data.ProfessorDAO;
+import com.example.arnavi.Data.ProfessorDTO;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class DestinationActivity extends AppCompatActivity {
 
 
     private Spinner spinner;
     private AutoCompleteTextView autoText;
+    private Button button;
     private int spinnerSelected;
-    private TextView tv_result;
+    private String name;
+
     //세부 목적지 배열
     ArrayList<BuildingDTO> buildingList;
     ArrayList<MajorDTO> majorList;
-//    ArrayList<ProfessorDTO> professorList;
+    ArrayList<ProfessorDTO> professorList;
 
+    //자동완성용 배열
     ArrayList<String> buildings = new ArrayList<>();
     ArrayList<String> majors = new ArrayList<>();
     ArrayList<String> professors = new ArrayList<>();
 
     ArrayAdapter<String> adapter;
+    double[] LaLo = new double[2];
+    //BPDAO dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,24 +56,45 @@ public class DestinationActivity extends AppCompatActivity {
         //DB에서 테이블 불러오기
         initDB();
 
+        buildings.addAll(majors);
+        buildings.addAll(professors);
+
         spinner = (Spinner) findViewById(R.id.spinner);
         autoText = (AutoCompleteTextView) findViewById(R.id.autoText);
+        button = (Button)findViewById(R.id.destinationButton);
+        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, buildings);
+        autoText.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                if (position == 0) {
-                    adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, buildings);
-                    autoText.setAdapter(adapter);
-                } else if (position == 1) {
-                    adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, majors);
-                    autoText.setAdapter(adapter);
-                }
+                spinnerSelected = position;
+                name = (String)adapterView.getItemAtPosition(position);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//
+//                if(spinnerSelected == 0){
+//                    LaLo = dao.getLaLoFromB(name);
+//                }
+//                else if(spinnerSelected == 1){
+//                    LaLo = dao.getLaLoFromM(name);
+//                }
+//                else if(spinnerSelected == 2){
+//                    LaLo = dao.getLaLoFromP(name);
+//                }
+//
+//                intent.putExtra("LaLo", LaLo);
+//                startActivityForResult(intent, 101);
             }
         });
 
@@ -88,8 +106,19 @@ public class DestinationActivity extends AppCompatActivity {
 
         loadMajor();
         setMajorList(majors, majorList);
+
+        loadProfessor();
+        setProfessorList(professors, professorList);
+
+        loadBP();
+
     }
 
+    private void loadBP(){
+//        dao = new BPDAO(getApplicationContext());
+//        dao.createDatabase();
+//        dao.open();
+    }
     private void loadBuilding() {
         BuildingDAO dao = new BuildingDAO(getApplicationContext());
 
@@ -116,7 +145,22 @@ public class DestinationActivity extends AppCompatActivity {
 
     private void setMajorList(ArrayList<String> majors, ArrayList<MajorDTO> majorList) {
         for (MajorDTO o : majorList) {
-            buildings.add(o.getMname());
+            majors.add(o.getMname());
+        }
+    }
+
+    private void loadProfessor() {
+        ProfessorDAO dao = new ProfessorDAO(getApplicationContext());
+
+        dao.createDatabase();
+        dao.open();
+        professorList = dao.getTableData();
+        dao.close();
+    }
+
+    private void setProfessorList(ArrayList<String> professors, ArrayList<ProfessorDTO> professorList) {
+        for (ProfessorDTO o : professorList) {
+            professors.add(o.getPname());
         }
     }
 

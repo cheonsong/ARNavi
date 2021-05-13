@@ -11,22 +11,22 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class BuildingDAO {
+public class ProfessorDAO {
     protected static final String TAG = "DataAdapter";
 
     // TODO : TABLE 이름을 명시해야함
-    protected static final String TABLE_NAME = "Building";
+    protected static final String TABLE_NAME = "Professor";
 
     private final Context mContext;
     private SQLiteDatabase mDb;
     private DBHelper mDbHelper;
 
-    public BuildingDAO(Context context) {
+    public ProfessorDAO(Context context) {
         this.mContext = context;
         mDbHelper = new DBHelper(mContext);
     }
 
-    public BuildingDAO createDatabase() throws SQLException {
+    public ProfessorDAO createDatabase() throws SQLException {
         try {
             mDbHelper.createDataBase();
         } catch (IOException mIOException) {
@@ -36,7 +36,7 @@ public class BuildingDAO {
         return this;
     }
 
-    public BuildingDAO open() throws SQLException {
+    public ProfessorDAO open() throws SQLException {
         try {
             mDbHelper.openDataBase();
             mDbHelper.close();
@@ -58,10 +58,10 @@ public class BuildingDAO {
             String sql = "SELECT * FROM " + TABLE_NAME;
 
             // 모델 넣을 리스트 생성
-            ArrayList<BuildingDTO> userList = new ArrayList();
+            ArrayList<ProfessorDTO> userList = new ArrayList<>();
 
             // TODO : 모델 선언
-            BuildingDTO building = null;
+            ProfessorDTO professor = null;
 
             Cursor mCur = mDb.rawQuery(sql, null);
             if (mCur != null) {
@@ -69,16 +69,13 @@ public class BuildingDAO {
                 while (mCur.moveToNext()) {
 
                     // TODO : 커스텀 모델 생성
-                    building = new BuildingDTO();
+                    professor = new ProfessorDTO();
 
                     // TODO : Record 기술
                     // id, name, account, privateKey, secretKey, Comment
-                    building.setBname(mCur.getString(0));
-                    building.setLatitude(mCur.getDouble(1));
-                    building.setLongtitude(mCur.getDouble(2));
-
+                    professor.setPname(mCur.getString(0));
                     // 리스트에 넣기
-                    userList.add(building);
+                    userList.add(professor);
                 }
 
             }

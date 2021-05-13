@@ -82,9 +82,11 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     public static double La;    //latitude
     public static double Lo;    // longitude
 
+    private double[] LaLo;
+
     // Varibales needed to Navigation
     private Point origin;// = Point.fromLngLat(126.8876249976178, 35.179352364881765);
-    private Point destination = Point.fromLngLat(126.9321397, 35.1419225);
+    private Point destination;
     private NavigationMapRoute navigationMapRoute;
     public static DirectionsRoute currentRoute;
     private MapboxDirections client;
@@ -101,6 +103,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
         setContentView(R.layout.activity_main);
 
+        Intent intent = getIntent();
+        if(intent != null){
+            LaLo = intent.getDoubleArrayExtra("LaLo");
+        }
+
+        destination = Point.fromLngLat(LaLo[0], LaLo[1]);
         //Setup the Destination Poing
 //        destination = Point.fromLngLat(35.1419225, 126.9321397);
 

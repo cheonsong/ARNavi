@@ -19,4 +19,10 @@
         android:layout_height="57dp"
         android:dropDownWidth="wrap_content"
         android:hint="목적지를 입력하세요" />
+
+    <Button
+        android:id="@+id/destinationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 </LinearLayout>
