@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="test">
+        <item>건물</item>
+        <item>학과</item>
+        <item>교수님</item>
+    </string-array>
+
+</resources>

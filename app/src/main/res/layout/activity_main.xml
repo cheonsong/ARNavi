@@ -8,7 +8,6 @@
     tools:context=".MainActivity">
 
 
-
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
@@ -33,15 +32,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         mapbox:layout_constraintStart_toStartOf="parent"
         mapbox:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btnStartNavigation"
-        android:layout_width="180dp"
+        android:layout_width="150dp"
         android:layout_height="43dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:background="@color/mapboxGrayLight"
         android:enabled="false"
-        android:text="NAVIGATION START"
+        android:text="NAVIGATION"
         android:textColor="@color/mapboxWhite"
         app:layout_constraintBottom_toBottomOf="@+id/mapView"
         app:layout_constraintVertical_bias="0.9"
@@ -50,7 +49,7 @@
 
     <Button
         android:id="@+id/btnStartAR"
-        android:layout_width="180dp"
+        android:layout_width="150dp"
         android:layout_height="43dp"
         android:background="@color/mapboxGrayLight"
         android:enabled="false"
