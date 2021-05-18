@@ -45,7 +45,7 @@ public class DestinationActivity extends AppCompatActivity {
 
     ArrayAdapter<String> adapter;
     double[] LaLo = new double[2];
-    //BPDAO dao;
+    BPDAO dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,20 +56,23 @@ public class DestinationActivity extends AppCompatActivity {
         //DB에서 테이블 불러오기
         initDB();
 
-        buildings.addAll(majors);
-        buildings.addAll(professors);
-
         spinner = (Spinner) findViewById(R.id.spinner);
         autoText = (AutoCompleteTextView) findViewById(R.id.autoText);
         button = (Button)findViewById(R.id.destinationButton);
-        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, buildings);
-        autoText.setAdapter(adapter);
+        TextView textView = findViewById(R.id.textView);
+
+        buildings.addAll(majors);
+        buildings.addAll(professors);
+
+
+        textView.setText(buildings.get(149));
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 spinnerSelected = position;
-                name = (String)adapterView.getItemAtPosition(position);
+                adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, buildings);
+                autoText.setAdapter(adapter);
             }
 
             @Override
@@ -78,23 +81,31 @@ public class DestinationActivity extends AppCompatActivity {
             }
         });
 
+        autoText.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                name = ((TextView)view).getText().toString();
+            }
+        });
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//
-//                if(spinnerSelected == 0){
-//                    LaLo = dao.getLaLoFromB(name);
-//                }
-//                else if(spinnerSelected == 1){
-//                    LaLo = dao.getLaLoFromM(name);
-//                }
-//                else if(spinnerSelected == 2){
-//                    LaLo = dao.getLaLoFromP(name);
-//                }
-//
-//                intent.putExtra("LaLo", LaLo);
-//                startActivityForResult(intent, 101);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+
+
+                if(spinnerSelected == 0){
+                    LaLo = dao.getLaLoFromB(name);
+                }
+                else if(spinnerSelected == 1){
+                    LaLo = dao.getLaLoFromM(name);
+                }
+                else if(spinnerSelected == 2){
+                    LaLo = dao.getLaLoFromP(name);
+                }
+
+                intent.putExtra("LaLo", LaLo);
+                startActivityForResult(intent, 101);
             }
         });
 
@@ -115,9 +126,9 @@ public class DestinationActivity extends AppCompatActivity {
     }
 
     private void loadBP(){
-//        dao = new BPDAO(getApplicationContext());
-//        dao.createDatabase();
-//        dao.open();
+        dao = new BPDAO(getApplicationContext());
+        dao.createDatabase();
+        dao.open();
     }
     private void loadBuilding() {
         BuildingDAO dao = new BuildingDAO(getApplicationContext());
