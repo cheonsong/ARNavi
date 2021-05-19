@@ -86,11 +86,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
     // Varibales needed to Navigation
     private Point origin;// = Point.fromLngLat(126.8876249976178, 35.179352364881765);
-    private Point destination = Point.fromLngLat(126.8876249976178, 35.179352364881765);
+    private Point destination = Point.fromLngLat(126.93382408269383, 35.14027658174391);//,
     private NavigationMapRoute navigationMapRoute;
     public static DirectionsRoute currentRoute;
     private MapboxDirections client;
     private Button startButton;
+    private Button arButton;
 
     LocationComponent locationComponent;
 
@@ -126,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 getRoute_navi_walking(origin, destination);
                 activateButton.setVisibility(View.INVISIBLE);
                 startButton.setEnabled(true);
+                arButton.setEnabled(true);
             }
         });
 
@@ -141,6 +143,16 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                         .build();
                 // Call this method with Context from within an Activity
                 NavigationLauncher.startNavigation(MainActivity.this, options);
+            }
+        });
+
+        arButton = findViewById(R.id.btnStartAR);
+        arButton.setEnabled(false);
+        arButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), UnityPlayerActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -62,17 +62,18 @@ public class DestinationActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.textView);
 
         buildings.addAll(majors);
-        buildings.addAll(professors);
+//        buildings.addAll(professors);
 
 
-        textView.setText(buildings.get(149));
+        textView.setText(professors.get(0));
+
+        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, buildings);
+        autoText.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 spinnerSelected = position;
-                adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_dropdown_item_1line, buildings);
-                autoText.setAdapter(adapter);
             }
 
             @Override
@@ -81,30 +82,30 @@ public class DestinationActivity extends AppCompatActivity {
             }
         });
 
-        autoText.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                name = ((TextView)view).getText().toString();
-            }
-        });
+//        autoText.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                name = ((TextView)view).getText().toString();
+//            }
+//        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-
-
-                if(spinnerSelected == 0){
-                    LaLo = dao.getLaLoFromB(name);
-                }
-                else if(spinnerSelected == 1){
-                    LaLo = dao.getLaLoFromM(name);
-                }
-                else if(spinnerSelected == 2){
-                    LaLo = dao.getLaLoFromP(name);
-                }
-
-                intent.putExtra("LaLo", LaLo);
+//
+//
+//                if(spinnerSelected == 0){
+//                    LaLo = dao.getLaLoFromB(name);
+//                }
+//                else if(spinnerSelected == 1){
+//                    LaLo = dao.getLaLoFromM(name);
+//                }
+//                else if(spinnerSelected == 2){
+//                    LaLo = dao.getLaLoFromP(name);
+//                }
+//
+//                intent.putExtra("LaLo", LaLo);
                 startActivityForResult(intent, 101);
             }
         });
@@ -121,8 +122,7 @@ public class DestinationActivity extends AppCompatActivity {
         loadProfessor();
         setProfessorList(professors, professorList);
 
-        loadBP();
-
+        //loadBP();
     }
 
     private void loadBP(){
