@@ -82,11 +82,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     public static double La;    //latitude
     public static double Lo;    // longitude
 
-    private double[] LaLo;
+    private double destinationLo;
+    private double destinationLa;
 
     // Varibales needed to Navigation
     private Point origin;
-    private Point destination = Point.fromLngLat(126.93382408269383, 35.14027658174391);//,
+    private Point destination;
     private NavigationMapRoute navigationMapRoute;
     public static DirectionsRoute currentRoute;
     private MapboxDirections client;
@@ -112,6 +113,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 //        destination = Point.fromLngLat(LaLo[0], LaLo[1]);
 //        //Setup the Destination Poing
 //        destination = Point.fromLngLat(35.1419225, 126.9321397);
+
+        Intent intent = getIntent();
+        destinationLo = intent.getDoubleExtra("Lo",0);
+        destinationLa = intent.getDoubleExtra("La",0);
+        destination = Point.fromLngLat(destinationLo, destinationLa);
+        Toast.makeText(this, Double.toString(destinationLa) + " " + Double.toString(destinationLo), Toast.LENGTH_LONG).show();
 
         //Setup the MapView
         mapView = (MapView) findViewById(R.id.mapView);
