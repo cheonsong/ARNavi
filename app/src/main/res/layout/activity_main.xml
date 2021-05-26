@@ -22,6 +22,7 @@
 
     <Button
         android:id="@+id/activateButton"
+        style="@style/Text.TitleStyle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@color/mapboxBlue"
@@ -35,6 +36,7 @@
 
     <Button
         android:id="@+id/btnStartNavigation"
+        style="@style/Text.TitleStyle"
         android:layout_width="150dp"
         android:layout_height="43dp"
         android:layout_marginStart="16dp"
@@ -49,6 +51,7 @@
 
     <Button
         android:id="@+id/btnStartAR"
+        style="@style/Text.TitleStyle"
         android:layout_width="150dp"
         android:layout_height="43dp"
         android:background="@color/mapboxGrayLight"
