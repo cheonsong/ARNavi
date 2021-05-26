@@ -24,7 +24,7 @@
         android:id="@+id/activateButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/mapboxGrayLight"
+        android:background="@color/mapboxBlue"
         android:enabled="false"
         android:text="Activate Map"
         android:textColor="@color/mapboxWhite"
