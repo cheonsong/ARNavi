@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapView2"
         android:layout_width="match_parent"
@@ -21,36 +20,7 @@
     </com.mapbox.mapboxsdk.maps.MapView>
 
     <Button
-        android:id="@+id/activateButton"
-        style="@style/Text.TitleStyle"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/mapboxBlue"
-        android:enabled="false"
-        android:text="Activate Map"
-        android:textColor="@color/mapboxWhite"
-        app:layout_constraintBottom_toBottomOf="@+id/mapView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        mapbox:layout_constraintStart_toStartOf="parent"
-        mapbox:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnStartNavigation"
-        style="@style/Text.TitleStyle"
-        android:layout_width="150dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="16dp"
-        android:background="@color/mapboxGrayLight"
-        android:enabled="false"
-        android:text="NAVIGATION"
-        android:textColor="@color/mapboxWhite"
-        app:layout_constraintBottom_toBottomOf="@+id/mapView2"
-        app:layout_constraintVertical_bias="0.9"
-        mapbox:layout_constraintStart_toStartOf="parent"
-        mapbox:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnStartAR"
+        android:id="@+id/btnStartAR2"
         style="@style/Text.TitleStyle"
         android:layout_width="150dp"
         android:layout_height="43dp"
@@ -58,11 +28,27 @@
         android:enabled="false"
         android:text="AR START"
         android:textColor="@color/mapboxWhite"
-        app:layout_constraintBottom_toBottomOf="@+id/mapView2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.92"
-        app:layout_constraintStart_toEndOf="@+id/btnStartNavigation"
-        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintStart_toEndOf="@+id/btnStartNavigation2"
+        app:layout_constraintVertical_bias="0.899"
+        mapbox:layout_constraintStart_toStartOf="parent"
+        mapbox:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnStartNavigation2"
+        style="@style/Text.TitleStyle"
+        android:layout_width="150dp"
+        android:layout_height="43dp"
+        android:background="@color/mapboxGrayLight"
+        android:enabled="false"
+        android:text="NAVIGATION"
+        android:textColor="@color/mapboxWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintVertical_bias="0.899"
         mapbox:layout_constraintStart_toStartOf="parent"
         mapbox:layout_constraintTop_toTopOf="parent" />
 

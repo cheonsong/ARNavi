@@ -58,7 +58,8 @@ public class DestinationActivity extends AppCompatActivity implements RecyclerVi
         selectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                startActivity(intent);
             }
         });
 

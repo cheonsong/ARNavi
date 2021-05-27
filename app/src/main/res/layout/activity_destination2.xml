@@ -38,9 +38,10 @@
         style="@style/Text.TitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/mapboxBlue"
+        android:background="@color/bottomview_select"
         android:text="지도에서 설정하기"
-        android:textColor="@color/mapboxWhite" />
+        android:textColor="@color/mapboxWhite"
+        android:textSize="16dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
