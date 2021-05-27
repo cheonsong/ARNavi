@@ -42,6 +42,7 @@ public class DestinationActivity extends AppCompatActivity implements RecyclerVi
 
     Button selectBtn;
     ChosunDAO dao;
+    SearchView searchView;
 
 
     @Override
@@ -66,12 +67,7 @@ public class DestinationActivity extends AppCompatActivity implements RecyclerVi
         adapter = new CustomAdapter(chosunList, recyclerView,this, this);
         recyclerView.setAdapter(adapter);
 
-    }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        MenuItem menuItem = menu.findItem(R.id.search);
-        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView = findViewById(R.id.searchView);
         searchView.setQueryHint("목적지를 입력하세요.");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -86,9 +82,29 @@ public class DestinationActivity extends AppCompatActivity implements RecyclerVi
                 return false;
             }
         });
-
-        return super.onCreateOptionsMenu(menu);
     }
+
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu, menu);
+//        MenuItem menuItem = menu.findItem(R.id.search);
+//        SearchView searchView = (SearchView) menuItem.getActionView();
+//        searchView.setQueryHint("목적지를 입력하세요.");
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String s) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String s) {
+//                adapter.getFilter().filter(s.toString());
+//
+//                return false;
+//            }
+//        });
+//
+//        return super.onCreateOptionsMenu(menu);
+//    }
 
     private void initDB() {
         loadBuilding();
