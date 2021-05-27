@@ -6,9 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -22,6 +26,8 @@ import com.example.capstone_ui_1.Data.RecyclerViewClickInterface;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.internal.cache.DiskLruCache;
+
 
 public class DestinationActivity extends AppCompatActivity implements RecyclerViewClickInterface {
     private RecyclerView recyclerView;
@@ -34,7 +40,9 @@ public class DestinationActivity extends AppCompatActivity implements RecyclerVi
     ArrayList<String> chosuns = new ArrayList<>();
     ArrayList<com.example.capstone_ui_1.Data.LaLo> lalos = new ArrayList<>();
 
+    Button selectBtn;
     ChosunDAO dao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +54,17 @@ public class DestinationActivity extends AppCompatActivity implements RecyclerVi
         //DB에서 테이블 불러오기
         initDB();
 
+        selectBtn = findViewById(R.id.selectButton);
+        selectBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        adapter = new CustomAdapter(chosunList, this, this);
+            }
+        });
 
+        adapter = new CustomAdapter(chosunList, recyclerView,this, this);
         recyclerView.setAdapter(adapter);
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -66,6 +81,7 @@ public class DestinationActivity extends AppCompatActivity implements RecyclerVi
             @Override
             public boolean onQueryTextChange(String s) {
                 adapter.getFilter().filter(s.toString());
+
                 return false;
             }
         });
@@ -120,10 +136,10 @@ public class DestinationActivity extends AppCompatActivity implements RecyclerVi
     @Override
     public void onItemClick(int position) {
         //Toast.makeText(this, Double.toString(lalos.get(position).getLa()) + " " + Double.toString(lalos.get(position).getLo()), Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("Lo", lalos.get(position).getLo());
-        intent.putExtra("La", lalos.get(position).getLa());
-        startActivityForResult(intent,101);
+//        Intent intent = new Intent(this, MainActivity.class);
+//        intent.putExtra("Lo", lalos.get(position).getLo());
+//        intent.putExtra("La", lalos.get(position).getLa());
+//        startActivityForResult(intent, 101);
     }
 
     @Override

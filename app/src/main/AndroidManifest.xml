@@ -17,14 +17,18 @@
         android:roundIcon="@mipmap/ic_launcher_capstone_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DestinationActivity">            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".LogoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-        <activity android:name=".MainActivity"
-            android:parentActivityName=".DestinationActivity">
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".DestinationActivity"
+            android:parentActivityName=".LogoActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:parentActivityName=".DestinationActivity"></activity>
         <activity
             android:name=".UnityPlayerActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"

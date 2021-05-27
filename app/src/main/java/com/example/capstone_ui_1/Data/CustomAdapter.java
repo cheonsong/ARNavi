@@ -1,6 +1,7 @@
 package com.example.capstone_ui_1.Data;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,16 +10,18 @@ import android.widget.Filterable;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Button;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.capstone_ui_1.MainActivity;
 import com.example.capstone_ui_1.R;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CumstomViewHolder> implements Filterable{
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CumstomViewHolder> implements Filterable {
 
     ArrayList<ChosunDTO> arrayList;
     ArrayList<ChosunDTO> arrayListFull;
@@ -27,12 +30,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CumstomVie
     private Toast toast;
     com.example.capstone_ui_1.Data.OnClassItemClickListener listener;
     private Button layout_legister;
+    RecyclerView rvView;
+    ChosunDTO dto;
 
     private com.example.capstone_ui_1.Data.RecyclerViewClickInterface recyclerViewClickInterface;
 
-    public CustomAdapter(ArrayList<ChosunDTO> arrayList, Context context, com.example.capstone_ui_1.Data.RecyclerViewClickInterface recyclerViewClickInterface) {
+    public CustomAdapter(ArrayList<ChosunDTO> arrayList, RecyclerView rvView, Context context, com.example.capstone_ui_1.Data.RecyclerViewClickInterface recyclerViewClickInterface) {
         this.arrayList = arrayList;
         this.context = context;
+        this.rvView = rvView;
         arrayListFull = new ArrayList<>(arrayList);
         this.recyclerViewClickInterface = recyclerViewClickInterface;
     }
@@ -41,6 +47,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CumstomVie
     @Override
     public CumstomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int pos = rvView.getChildAdapterPosition(view);
+                dto = arrayList.get(pos);
+                Intent intent = new Intent(context.getApplicationContext(), MainActivity.class);
+                intent.putExtra("Lo", dto.getLongtitude());
+                intent.putExtra("La", dto.getLatitude());
+                context.startActivity(intent);
+            }
+        });
         CumstomViewHolder holder = new CumstomViewHolder(view, this);
         return holder;
     }
@@ -56,7 +73,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CumstomVie
 
     @Override
     public int getItemCount() {
-        return (arrayList !=null ? arrayList.size() : 0);
+        return (arrayList != null ? arrayList.size() : 0);
     }
 
 
@@ -66,20 +83,21 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CumstomVie
     }
 
     public void setOnClickListener(com.example.capstone_ui_1.Data.OnClassItemClickListener listener) {
-        this.listener =  listener;
+        this.listener = listener;
     }
 
 
     public void onItemClick(CumstomViewHolder holder, View view, int position) {
-        if(listener != null) {
-            listener.onItemClick(holder,view,position); }
+        if (listener != null) {
+            listener.onItemClick(holder, view, position);
+        }
     }
 
     private Filter FilterUser = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
             String searchText = charSequence.toString().toLowerCase();
-            ArrayList<ChosunDTO>tempList=new ArrayList<>();
+            ArrayList<ChosunDTO> tempList = new ArrayList<>();
             if (searchText.length() == 0 || searchText.isEmpty()) {
                 tempList.addAll(arrayListFull);
             } else {
@@ -111,32 +129,32 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CumstomVie
         TextView tv_longtitude;
         Button layout_legister;
 
-        public CumstomViewHolder(@NonNull View itemView,CustomAdapter listener) {
+        public CumstomViewHolder(@NonNull View itemView, CustomAdapter listener) {
             super(itemView);
-            this.tv_building=itemView.findViewById(R.id.tv_building);
-            this.tv_professor=itemView.findViewById(R.id.tv_professor);
-            this.tv_major =itemView.findViewById(R.id.tv_major);
-            this.tv_latitude=itemView.findViewById(R.id.tv_latitude);
-            this.tv_longtitude=itemView.findViewById(R.id.tv_longtitude);
-            this.layout_legister = itemView.findViewById(R.id.layout_legister);
+            this.tv_building = itemView.findViewById(R.id.tv_building);
+            this.tv_professor = itemView.findViewById(R.id.tv_professor);
+            this.tv_major = itemView.findViewById(R.id.tv_major);
+            this.tv_latitude = itemView.findViewById(R.id.tv_latitude);
+            this.tv_longtitude = itemView.findViewById(R.id.tv_longtitude);
+//            this.layout_legister = itemView.findViewById(R.id.layout_legister);
 
-            layout_legister.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    recyclerViewClickInterface.onItemClick(getAdapterPosition());
-//                    int position = getAdapterPosition();
+//            layout_legister.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    recyclerViewClickInterface.onItemClick(getAdapterPosition());
+////                    int position = getAdapterPosition();
+////
+////
+////                    if(listener != null){
+////                        listener.onItemClick(CumstomViewHolder.this, v, position);
+////                    }
+//                }
+//            });
+//            itemView.setOnLongClickListener((v) -> {
+//                recyclerViewClickInterface.onLongItemClick(getAdapterPosition());
 //
-//
-//                    if(listener != null){
-//                        listener.onItemClick(CumstomViewHolder.this, v, position);
-//                    }
-                }
-            });
-            itemView.setOnLongClickListener((v) -> {
-                recyclerViewClickInterface.onLongItemClick(getAdapterPosition());
-
-                return true;
-            });
+//                return true;
+//            });
         }
     }
 }
