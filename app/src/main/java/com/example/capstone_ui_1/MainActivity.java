@@ -120,9 +120,9 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 getRoute_navi_walking(origin, destination);
                 activateButton.setVisibility(View.INVISIBLE);
                 startButton.setEnabled(true);
-                startButton.setBackgroundColor(R.color.mapboxBlue);
+                startButton.setBackgroundResource(R.color.mapboxBlue);
                 arButton.setEnabled(true);
-                arButton.setBackgroundColor((R.color.mapboxBlue));
+                arButton.setBackgroundResource((R.color.mapboxBlue));
             }
         });
 
