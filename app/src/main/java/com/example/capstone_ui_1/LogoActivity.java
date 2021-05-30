@@ -17,6 +17,7 @@ public class LogoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_logo);
 
         informationBtn = findViewById(R.id.informationButton);
+
         destinationBtn = findViewById(R.id.destinationButton);
         destinationBtn.setOnClickListener(new View.OnClickListener() {
             @Override

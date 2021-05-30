@@ -9,7 +9,7 @@
 
 
     <com.mapbox.mapboxsdk.maps.MapView
-        android:id="@+id/mapView2"
+        android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         mapbox:mapbox_cameraTargetLat="35.14192258214305"
@@ -29,7 +29,7 @@
         android:enabled="false"
         android:text="Activate Map"
         android:textColor="@color/mapboxWhite"
-        app:layout_constraintBottom_toBottomOf="@+id/mapView2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         mapbox:layout_constraintStart_toStartOf="parent"
         mapbox:layout_constraintTop_toTopOf="parent" />
@@ -39,12 +39,12 @@
         style="@style/Text.TitleStyle"
         android:layout_width="150dp"
         android:layout_height="43dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:background="@color/mapboxGrayLight"
         android:enabled="false"
         android:text="NAVIGATION"
         android:textColor="@color/mapboxWhite"
-        app:layout_constraintBottom_toBottomOf="@+id/mapView2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.9"
         mapbox:layout_constraintStart_toStartOf="parent"
         mapbox:layout_constraintTop_toTopOf="parent" />
@@ -54,16 +54,14 @@
         style="@style/Text.TitleStyle"
         android:layout_width="150dp"
         android:layout_height="43dp"
+        android:layout_marginEnd="24dp"
         android:background="@color/mapboxGrayLight"
         android:enabled="false"
-        android:text="AR START"
+        android:text="AR"
         android:textColor="@color/mapboxWhite"
-        app:layout_constraintBottom_toBottomOf="@+id/mapView2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.92"
-        app:layout_constraintStart_toEndOf="@+id/btnStartNavigation"
-        app:layout_constraintVertical_bias="0.9"
-        mapbox:layout_constraintStart_toStartOf="parent"
-        mapbox:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

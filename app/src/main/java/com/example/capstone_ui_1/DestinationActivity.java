@@ -84,28 +84,6 @@ public class DestinationActivity extends AppCompatActivity implements RecyclerVi
         });
     }
 
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu, menu);
-//        MenuItem menuItem = menu.findItem(R.id.search);
-//        SearchView searchView = (SearchView) menuItem.getActionView();
-//        searchView.setQueryHint("목적지를 입력하세요.");
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String s) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String s) {
-//                adapter.getFilter().filter(s.toString());
-//
-//                return false;
-//            }
-//        });
-//
-//        return super.onCreateOptionsMenu(menu);
-//    }
-
     private void initDB() {
         loadBuilding();
         setChosunList(chosuns, chosunList);
@@ -152,11 +130,7 @@ public class DestinationActivity extends AppCompatActivity implements RecyclerVi
 
     @Override
     public void onItemClick(int position) {
-        //Toast.makeText(this, Double.toString(lalos.get(position).getLa()) + " " + Double.toString(lalos.get(position).getLo()), Toast.LENGTH_LONG).show();
-//        Intent intent = new Intent(this, MainActivity.class);
-//        intent.putExtra("Lo", lalos.get(position).getLo());
-//        intent.putExtra("La", lalos.get(position).getLa());
-//        startActivityForResult(intent, 101);
+
     }
 
     @Override
@@ -165,6 +139,5 @@ public class DestinationActivity extends AppCompatActivity implements RecyclerVi
         lalos.remove(position);
 //        CustomAdapter.notifyItemRemoved(position);
     }
-
 
 }

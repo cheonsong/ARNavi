@@ -4,14 +4,12 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
-import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.mapbox.android.core.location.LocationEngine;
@@ -47,7 +45,6 @@ import com.mapbox.services.android.navigation.ui.v5.NavigationLauncherOptions;
 import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute;
 
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -103,23 +100,13 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
         setContentView(R.layout.activity_main);
 
-//        Intent intent = getIntent();
-//        if(intent != null){
-//            LaLo = intent.getDoubleArrayExtra("LaLo");
-//        }
-//
-//        destination = Point.fromLngLat(LaLo[0], LaLo[1]);
-//        //Setup the Destination Poing
-//        destination = Point.fromLngLat(35.1419225, 126.9321397);
-
         Intent intent = getIntent();
         destinationLo = intent.getDoubleExtra("Lo",0);
         destinationLa = intent.getDoubleExtra("La",0);
         destination = Point.fromLngLat(destinationLo, destinationLa);
-        Toast.makeText(this, Double.toString(destinationLa) + " " + Double.toString(destinationLo), Toast.LENGTH_LONG).show();
 
         //Setup the MapView
-        mapView = (MapView) findViewById(R.id.mapView2);
+        mapView = (MapView) findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
@@ -176,25 +163,25 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         Toast.makeText(this, R.string.user_location_permission_explanation, Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        Log.e(TAG, "onActivityResult 실행");
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 200) {
-            if (resultCode == RESULT_OK && data != null) {
-                ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-//                editText.setText(result.get(0));
-//                STT.setText(result.get(0));
-                startButton.setEnabled(true);
-//                arstartButton.setEnabled(true);
-//                getPointFromGeoCoder(editText.getText().toString());
-                Point origin = Point.fromLngLat(Lo, La);
-//                Point destination = Point.fromLngLat(destinationX, destinationY);
-//                getRoute_walking(origin,destination);//폴리라인 그리기
-                getRoute_navi_walking(origin, destination);
-            }
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        Log.e(TAG, "onActivityResult 실행");
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == 200) {
+//            if (resultCode == RESULT_OK && data != null) {
+//                ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+////                editText.setText(result.get(0));
+////                STT.setText(result.get(0));
+//                startButton.setEnabled(true);
+////                arstartButton.setEnabled(true);
+////                getPointFromGeoCoder(editText.getText().toString());
+//                Point origin = Point.fromLngLat(Lo, La);
+////                Point destination = Point.fromLngLat(destinationX, destinationY);
+////                getRoute_walking(origin,destination);//폴리라인 그리기
+//                getRoute_navi_walking(origin, destination);
+//            }
+//        }
+//    }
 
     @Override
     public void onMapReady(@NonNull MapboxMap mapboxMap) {
@@ -209,9 +196,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                 enableLocationComponent(style);
             }
         });
-
-//        getRoute_walking(origin, destination);
-//        getRoute_navi_walking(origin, destination);
     }
 
     @Override
