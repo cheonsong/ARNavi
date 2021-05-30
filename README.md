@@ -127,10 +127,14 @@
 - Directions.prefab을 활용해 AR 경로 제공
 
 ### 최종 화면
-<img src="https://user-images.githubusercontent.com/59193640/120099416-4736af80-c176-11eb-8385-280ad15c7ffa.jpg" width="400" height="640">
-<img src="https://user-images.githubusercontent.com/59193640/120099417-4867dc80-c176-11eb-8aa9-48afd248a770.jpg" width="400" height="640">
-<img src="https://user-images.githubusercontent.com/59193640/120099419-49007300-c176-11eb-8c25-c23ab0e582c9.jpg" width="400" height="640">
-<img src="https://user-images.githubusercontent.com/59193640/120099430-561d6200-c176-11eb-963c-476653da2864.jpg" width="400" height="640">
+<p>
+    <img src="https://user-images.githubusercontent.com/59193640/120099416-4736af80-c176-11eb-8385-280ad15c7ffa.jpg" width="400" height="640">
+    <img src="https://user-images.githubusercontent.com/59193640/120099417-4867dc80-c176-11eb-8aa9-48afd248a770.jpg" width="400" height="640">
+</p>
+<p>
+    <img src="https://user-images.githubusercontent.com/59193640/120099419-49007300-c176-11eb-8c25-c23ab0e582c9.jpg" width="400" height="640">
+    <img src="https://user-images.githubusercontent.com/59193640/120099430-561d6200-c176-11eb-963c-476653da2864.jpg" width="400" height="640">
+</p>
 <br>
 
 ## 결론
