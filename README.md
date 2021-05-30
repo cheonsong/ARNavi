@@ -37,7 +37,7 @@
             }
         });
 ```
--  자동완성 필터[CustomAdapter.java](./app/src/main/java/com/example/capstone_ui_1/Data/CustomAdapter.java)
+-  자동완성 필터([CustomAdapter.java](./app/src/main/java/com/example/capstone_ui_1/Data/CustomAdapter.java))
 ```java
     private Filter FilterUser = new Filter() {
         @Override
@@ -61,7 +61,7 @@
 
 ### 지도에서 목적지 선택 기능
 - Mapbox 지도를 활용
-- 지도에서 직접 목적지 선택하기[MainActivity2.java](./app/src/main/java/com/example/capstone_ui_1/MainActivity2.java)
+- 지도에서 직접 목적지 선택하기([MainActivity2.java](./app/src/main/java/com/example/capstone_ui_1/MainActivity2.java))
 ```java
 @Override
     public boolean onMapClick(@NonNull LatLng point) {
@@ -127,10 +127,10 @@
 - Directions.prefab을 활용해 AR 경로 제공
 
 ### 최종 화면
-![최종 화면 1](https://user-images.githubusercontent.com/59193640/120099416-4736af80-c176-11eb-8385-280ad15c7ffa.jpg)
-![최종 화면 2](https://user-images.githubusercontent.com/59193640/120099417-4867dc80-c176-11eb-8aa9-48afd248a770.jpg)
-![최종 화면 3](https://user-images.githubusercontent.com/59193640/120099419-49007300-c176-11eb-8c25-c23ab0e582c9.jpg)
-![최종 화면 4](https://user-images.githubusercontent.com/59193640/120099430-561d6200-c176-11eb-963c-476653da2864.jpg)
+<img src="https://user-images.githubusercontent.com/59193640/120099416-4736af80-c176-11eb-8385-280ad15c7ffa.jpg" width="400" height="640">
+<img src="https://user-images.githubusercontent.com/59193640/120099417-4867dc80-c176-11eb-8aa9-48afd248a770.jpg" width="400" height="640">
+<img src="https://user-images.githubusercontent.com/59193640/120099419-49007300-c176-11eb-8c25-c23ab0e582c9.jpg" width="400" height="640">
+<img src="https://user-images.githubusercontent.com/59193640/120099430-561d6200-c176-11eb-963c-476653da2864.jpg" width="400" height="640">
 <br>
 
 ## 결론
