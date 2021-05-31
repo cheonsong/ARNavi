@@ -5,4 +5,154 @@
     <string name="user_location_permission_not_granted">위치권한실패 종료</string>
     <string name="mapbox_style">mapbox://styles/cjsthd88/cko3ufmwr0b3x18pv1j7janpt</string>
     <string name="game_view_content_description">Game view</string>
+    <string name="no_information">정보 없음</string>
+    <string name="engineering_one">
+        \n1층\n복사실 \n\n
+        2층\n공학교육현신센터 / 공과대학 / 산업기술창업대학원 / 매점 \n\n
+        14층\n그린리모델링인력양성센터 \n\n
+        15층\n중소기업산학협력센터 / 레이저응용생산기반 현장기술인력 양성센터 \n\n
+        16층\n원전제어계측실험실
+    </string>
+    <string name="enginerring_two">
+        \n1층\n 공동장비운영센터 / 매점 / 산학협력단 공동장비운영센터\n\n
+4층\n 연소대기오염저탄소에너지실\n\n
+    </string>
+    <string name="library">
+        \n1층\n 취업학생처 장애학생지원센터 / 생협서점 / 복사실 / 매점 / 대학일자리센터 / 증명자동발급실\n\n
+2층\n 1~4열람실 / 학술정보지원팀 / 그룹스터디실\n\n
+3층\n 멀티미디어정보센터 / 사회과학자료실 / 잉글리쉬카페\n\n
+4층\n 그룹스터디실 / 문학자료실\n\n
+5층\n 그룹스터디실 / 과학기술자료실\n\n
+6층\n 그룹스터디실 / 연속간행물/학위논문실 / 학술정보봉사팀\n\n
+7층\n 의학학술정보센터 / 고한적실 / 영상세미나실\n\n
+    </string>
+    <string name="international">
+        \n1층\n 학생의료공제조합 / 커피숍 / 보건진료소\n\n
+2층\n 취업학생처 취업전략팀 / ESL강의실 / 대학원강의실\n\n
+3층\n 취업학생처 양성평등센터 / 원스톱학생상담센터 / 성평등,성상담\n\n
+4층\n 언어교육원 한국어학당 / 언어교육원 / 외국인 교수실\n\n
+5층\n 정보전산원 / 인터넷침해사고대응팀\n\n
+    </string>
+    <string name="s_hall">\n1층 평생교육원\n\n
+2층 박물관\n\n
+3층 창의공학디자인융합학과\n\n
+4층 서석홀 대강당 / 작업치료학과실\n\n
+    </string>
+    <string name="student">
+        /n1층/n 신문방송사 / 영자신문사 /n/n
+2층/n 취업학생처 학생복지팀 / 예비군연대 / 취업학생처 장학팀/n/n
+3층/n 총학생회 / 총여학생회/n/n
+    </string>
+    <string name="it">
+        \n1층\n 컴퓨터공학과, 정보통신학과, 전자정보학과 교학팀 / 공용 PC실\n\n
+2층\n 복사실 / 그룹스터디실 / 공용 PC실\n\n
+3층\n IT홀\n\n
+4층\n S/W중심대학사업단 / 남자휴게실 / 여자휴게실\n\n
+5층\n 매점 / 보건과학대학 교학팀 / 복사실\n\n
+    </string>
+    <string name="main">
+        \n1층\n LINC+사업단(링크플러스 사업단) /산학협력단 / 복사실(남쪽) / 교무처 학사운영팀 / 증명자동발급실\n\n
+ 인터넷 방송국(CBN) / 광주은행
+2층\n 조선대학교 홍보대사 푸른나래 / 대학특성화 지원센터 / 기초교육대학\n\n
+3층\n 교무처 교수학습개발팀 / AI융합연구원 / 대학원 / 교무처 \n\n
+4층\n 매점 (남쪽) / 매점 (북쪽) / 인문대 컴퓨터실 A,B \n\n
+    </string>
+    <string name="business">
+        \n2층\n 매점(법상대) / 복사실\n\n
+    </string>
+    <string name="law">
+        \n2층\n 매점(법상대) / 복사실\n\n
+    </string>
+    <string name="professor_research">
+        \n1층\n교과교육연구소
+    </string>
+    <string name="global">
+        \n1층\n 매점\n\n
+2층\n 커피숍 / 복사실 in 글로벌하우스 \n\n
+    </string>
+    <string name="art">
+\n1층\n 총학생회실 / 여학생휴게실 \n\n
+2층\n 미술대학 교학팀 / 학장실 / 매점 / 미술관 / 도자성형실 / 목공예실\n\n
+3층\n 섬유디자인실\n\n
+4층\n 실내디자인실\n\n
+5층\n 현대조형미디어 / 회화학과실 / 한국화실 / 미술학과실\n\n
+6층\n 미학미술사실 / 서양화실\n\n
+7층\n 융합형캡스톤디자인실 / 창업동아리실 / 포토스튜디오실 / 편집디자인실 / 시각디자인실 / 글픽디자인실 / 시각디자인학과실\n\n
+8층\n 만화실 / 만화애니메이션학부실 / 만화실 / 애니메이션실 / 예술의상실 / 의복구성실 / 패턴제작실습실 / 디지털콘첸츠실
+    </string>
+    <string name="backhak_m">
+        \n1층\n매점 / 백학학사
+    </string>
+    <string name="backhak_w">
+        \n1층\n매점 / 백학학사
+    </string>
+    <string name="bio">
+        \n4층\n 김치연구센터\n\n
+5층\n DNA수복연구센터\n\n
+    </string>
+    <string name="medical_one">\n
+1층\n 매점 / 복사실 / 의과대학교수평의회\n\n
+2층\n 의학전문대학원 / 의과대학\n\n
+    </string>
+    <string name="medical_two">\n
+1층\n 매점 / 복사실 / 의과대학교수평의회\n\n
+2층\n 의학전문대학원 / 의과대학\n\n
+    </string>
+    <string name="medical_three">\n
+1층\n 매점 / 복사실 / 의과대학교수평의회\n\n
+2층\n 의학전문대학원 / 의과대학\n\n
+    </string>
+    <string name="i_hall">
+        \n1층\n 커피숍(엔젤리너스) / 구내식당\n\n
+2층\n 복사실, 매점\n\n
+3층\n 광특화연구센터\n\n
+    </string>
+    <string name="natural">\n
+1층\n 매점, 자연과학.공공보건안전대학\n\n
+2층\n 기초과학연구원\n\n
+4층\n 자연과학대학\n\n
+    </string>
+    <string name="nurse">
+        정보 없음
+    </string>
+    <string name="hospital">
+        정보 없음
+    </string>
+    <string name="dental">\n
+1층\n 구강악안면방사선교실 / 치과대학강당\n\n
+2층\n 매점\n\n
+    </string>
+    <string name="startup">\n
+1층\n 창업보육실\n\n
+2층\n 창업지원단\n\n
+3층\n 세미나실\n\n
+4층\n 창업보육실\n\n
+    </string>
+    <string name="physical">\n
+1층\n 우편취급국 (우체국) / 매점 / 태권도아카데미\n\n
+4층\n 스포츠과학연구소\n\n
+    </string>
+    <string name="esports">\n
+1층\n 입학처 입학팀 / 입학처 입학사정관팀 대강당\n\n
+2층\n 공용세미나실 / 채용설명회실/ 중형세미나실 \n\n
+    </string>
+    <string name="space">
+
+    </string>
+    <string name="ship_marine">
+
+    </string>
+    <string name="maru">
+        \n만권화밥\n\n샐러디\n\n더큰도시락\n\n중화가정\n\n석관동떡볶이\n\n제라진돈까스
+    </string>
+    <string name="social">
+
+    </string>
+    <string name="medicine">
+
+    </string>
+    <string name="rotc">
+
+    </string>
+
 </resources>

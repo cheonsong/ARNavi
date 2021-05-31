@@ -1,6 +1,7 @@
 package com.example.capstone_ui_1;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
@@ -10,8 +11,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.capstone_ui_1.Data.Converter;
 import com.mapbox.android.core.location.LocationEngine;
 import com.mapbox.android.core.location.LocationEngineCallback;
 import com.mapbox.android.core.location.LocationEngineProvider;
@@ -88,9 +91,13 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     private MapboxDirections client;
     private Button startButton;
     private Button arButton;
+    private Button infoButton;
 
     LocationComponent locationComponent;
 
+    private String building;
+    private String resName, msg;
+    private Converter converter = new Converter();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.e(TAG, "onCreate실행");
@@ -101,10 +108,13 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         setContentView(R.layout.activity_main);
 
         Intent intent = getIntent();
-        destinationLo = intent.getDoubleExtra("Lo",0);
-        destinationLa = intent.getDoubleExtra("La",0);
+        destinationLo = intent.getDoubleExtra("Lo", 0);
+        destinationLa = intent.getDoubleExtra("La", 0);
         destination = Point.fromLngLat(destinationLo, destinationLa);
+        building = intent.getStringExtra("building");
+        converter.convertBuilding(building);
 
+        msg = getString(getResources().getIdentifier(converter.getBName(), "string", getPackageName()));
         //Setup the MapView
         mapView = (MapView) findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
@@ -148,6 +158,18 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), UnityPlayerActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        infoButton = findViewById(R.id.infoButton);
+        infoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle(building);
+                builder.setMessage(msg);
+                builder.setNegativeButton("닫기", null);
+                builder.show();
             }
         });
 
@@ -308,56 +330,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
     }
 
-//    private void getRoute_walking(Point origin, Point destination) {
-//        Log.e(TAG, "getRoute 실행");
-//        client = MapboxDirections.builder()
-//                .origin(origin)//출발지 위도 경도
-//                .destination(destination)//도착지 위도 경도
-//                .overview(DirectionsCriteria.OVERVIEW_FULL)//정보 받는정도 최대
-//                .profile(DirectionsCriteria.PROFILE_WALKING)//길찾기 방법(도보,자전거,자동차)
-//                .accessToken(getString(R.string.mapbox_access_token))
-//                .build();
-//
-//        client.enqueueCall(new Callback<DirectionsResponse>() {
-//            @Override
-//            public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
-//                Log.e(TAG, "onResponse 실행");
-//                System.out.println(call.request().url().toString());
-//                // You can get the generic HTTP info about the response
-//                Log.e(TAG, "Response code: " + response.code());
-//                if (response.body() == null) {
-//                    Log.e(TAG, "No routes found, make sure you set the right user and access token.");
-//                    return;
-//                } else if (response.body().routes().size() < 1) {
-//                    Log.e(TAG, "No routes found");
-//                    return;
-//                }
-//                // Print some info about the route
-//                currentRoute = response.body().routes().get(0);
-//                Log.e(TAG, "Distance: " + currentRoute.distance());
-//
-//                int time = (int) (currentRoute.duration() / 60);
-//                //예상 시간을초단위로 받아옴
-//                double distants = (currentRoute.distance() / 1000);
-//                //목적지까지의 거리를 m로 받아옴
-//
-//                distants = Math.round(distants * 100) / 100.0;
-//                //Math.round() 함수는 소수점 첫째자리에서 반올림하여 정수로 남긴다
-//                //원래 수에 100곱하고 round 실행 후 다시 100으로 나눈다 -> 둘째자리까지 남김
-//
-//                Toast.makeText(getApplicationContext(), String.format("예상 시간 : " + String.valueOf(time) + " 분 \n" +
-//                        "목적지 거리 : " + distants + " km"), Toast.LENGTH_LONG).show();
-//                // Draw the route on the map
-//                //drawRoute(currentRoute);
-//            }
-//
-//            @Override
-//            public void onFailure(Call<DirectionsResponse> call, Throwable throwable) {
-//
-//            }
-//        });
-//    }
-
     private void getRoute_navi_walking(Point ori, Point dest) {
         Log.e(TAG, "get_Route_navi_walking실행");
         NavigationRoute.builder(this)
@@ -396,6 +368,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
                     }
                 });
     }
+
 
     @Override
     protected void onStart() {

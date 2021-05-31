@@ -55,6 +55,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CumstomVie
                 Intent intent = new Intent(context.getApplicationContext(), MainActivity.class);
                 intent.putExtra("Lo", dto.getLongtitude());
                 intent.putExtra("La", dto.getLatitude());
+                intent.putExtra("building", dto.getBuilding());
                 context.startActivity(intent);
             }
         });
