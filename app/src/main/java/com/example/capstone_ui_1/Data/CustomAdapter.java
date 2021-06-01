@@ -97,7 +97,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CumstomVie
     private Filter FilterUser = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
-            String searchText = charSequence.toString().toLowerCase();
+            String searchText = charSequence.toString();
             ArrayList<ChosunDTO> tempList = new ArrayList<>();
             if (searchText.length() == 0 || searchText.isEmpty()) {
                 tempList.addAll(arrayListFull);

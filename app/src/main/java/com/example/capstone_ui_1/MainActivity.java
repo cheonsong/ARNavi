@@ -1,20 +1,22 @@
 package com.example.capstone_ui_1;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
+import android.app.Dialog;
 import android.content.Intent;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.capstone_ui_1.Data.Converter;
 import com.mapbox.android.core.location.LocationEngine;
 import com.mapbox.android.core.location.LocationEngineCallback;
 import com.mapbox.android.core.location.LocationEngineProvider;
@@ -95,9 +97,11 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
     LocationComponent locationComponent;
 
+    //세부 정보 출력을 위한 변수
     private String building;
     private String resName, msg;
     private Converter converter = new Converter();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.e(TAG, "onCreate실행");
@@ -112,9 +116,12 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         destinationLa = intent.getDoubleExtra("La", 0);
         destination = Point.fromLngLat(destinationLo, destinationLa);
         building = intent.getStringExtra("building");
-        converter.convertBuilding(building);
 
+        //건물명 한글 -> 영어 변환
+        converter.convertBuilding(building);
         msg = getString(getResources().getIdentifier(converter.getBName(), "string", getPackageName()));
+        int resID = getResources().getIdentifier(converter.getBName(),"drawable",getPackageName());
+
         //Setup the MapView
         mapView = (MapView) findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
@@ -163,13 +170,14 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
 
         infoButton = findViewById(R.id.infoButton);
         infoButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle(building);
-                builder.setMessage(msg);
-                builder.setNegativeButton("닫기", null);
-                builder.show();
+                AlertDialog dialog = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle(building)
+                        .setMessage(msg)
+                        .setNegativeButton("닫기", null)
+                        .show();
             }
         });
 
@@ -184,26 +192,6 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
     public void onExplanationNeeded(List<String> permissionsToExplain) {
         Toast.makeText(this, R.string.user_location_permission_explanation, Toast.LENGTH_LONG).show();
     }
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        Log.e(TAG, "onActivityResult 실행");
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == 200) {
-//            if (resultCode == RESULT_OK && data != null) {
-//                ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-////                editText.setText(result.get(0));
-////                STT.setText(result.get(0));
-//                startButton.setEnabled(true);
-////                arstartButton.setEnabled(true);
-////                getPointFromGeoCoder(editText.getText().toString());
-//                Point origin = Point.fromLngLat(Lo, La);
-////                Point destination = Point.fromLngLat(destinationX, destinationY);
-////                getRoute_walking(origin,destination);//폴리라인 그리기
-//                getRoute_navi_walking(origin, destination);
-//            }
-//        }
-//    }
 
     @Override
     public void onMapReady(@NonNull MapboxMap mapboxMap) {
