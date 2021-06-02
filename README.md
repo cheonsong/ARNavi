@@ -156,7 +156,12 @@ infoButton.setOnClickListener(new View.OnClickListener() {
     <img src="https://user-images.githubusercontent.com/59193640/120099419-49007300-c176-11eb-8c25-c23ab0e582c9.jpg" width="400" height="640">
     <img src="https://user-images.githubusercontent.com/59193640/120099430-561d6200-c176-11eb-963c-476653da2864.jpg" width="400" height="640">
 </p>
-    <img src="https://user-images.githubusercontent.com/59193640/120449602-89f0c580-c3ca-11eb-9058-1c268230b1d0.jpg">
+<p>
+    <img src="https://user-images.githubusercontent.com/59193640/120449602-89f0c580-c3ca-11eb-9058-1c268230b1d0.jpg" width="400"
+    height="640">
+    <img src="(https://user-images.githubusercontent.com/59193640/120450206-3632ac00-c3cb-11eb-8930-f55200173e27.jpg" width="400"
+    height="640">
+</p>   
     <img src="https://user-images.githubusercontent.com/59193640/120449619-8c531f80-c3ca-11eb-8de0-bde0a181f95d.jpg">
 <br>
 
