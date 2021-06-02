@@ -21,15 +21,6 @@ public class ChosunDAO {
     private SQLiteDatabase mDb;
     private com.example.capstone_ui_1.Data.DBHelper mDbHelper;
 
-//    public class ChosunViewHolder extends RecyclerView.ViewHolder {
-//        protected TextView building;
-//        protected TextView major;
-//
-//        public ChosunViewHolder(View view) {
-//        super(view);
-//        this.building = (TextView) view.findViewById(R.id.autoText);
-//        }
-//    }
     public ChosunDAO(Context context) {
         this.mContext = context;
         mDbHelper = new com.example.capstone_ui_1.Data.DBHelper(mContext);

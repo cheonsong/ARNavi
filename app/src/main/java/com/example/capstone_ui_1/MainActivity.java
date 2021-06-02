@@ -56,10 +56,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-//import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconAllowOverlap;
-//import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconIgnorePlacement;
-//import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconImage;
-
 public class MainActivity extends AppCompatActivity implements PermissionsListener, OnMapReadyCallback {
 
     // Variables needed to initialize a map
@@ -118,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements PermissionsListen
         building = intent.getStringExtra("building");
 
         //건물명 한글 -> 영어 변환
-        converter.convertBuilding(building);
+        converter.convertBuildingToEng(building);
         msg = getString(getResources().getIdentifier(converter.getBName(), "string", getPackageName()));
         int resID = getResources().getIdentifier(converter.getBName(),"drawable",getPackageName());
 

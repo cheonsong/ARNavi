@@ -55,10 +55,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-//import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconAllowOverlap;
-//import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconIgnorePlacement;
-//import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconImage;
-
 public class MainActivity2 extends AppCompatActivity implements PermissionsListener, OnMapReadyCallback, MapboxMap.OnMapClickListener {
 
     // Variables needed to initialize a map

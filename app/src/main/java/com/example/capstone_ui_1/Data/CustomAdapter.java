@@ -27,9 +27,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CumstomVie
     ArrayList<ChosunDTO> arrayListFull;
 
     private Context context;
-    private Toast toast;
     com.example.capstone_ui_1.Data.OnClassItemClickListener listener;
-    private Button layout_legister;
     RecyclerView rvView;
     ChosunDTO dto;
 
@@ -128,7 +126,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CumstomVie
         TextView tv_major;
         TextView tv_latitude;
         TextView tv_longtitude;
-        Button layout_legister;
 
         public CumstomViewHolder(@NonNull View itemView, CustomAdapter listener) {
             super(itemView);
@@ -137,25 +134,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CumstomVie
             this.tv_major = itemView.findViewById(R.id.tv_major);
             this.tv_latitude = itemView.findViewById(R.id.tv_latitude);
             this.tv_longtitude = itemView.findViewById(R.id.tv_longtitude);
-//            this.layout_legister = itemView.findViewById(R.id.layout_legister);
-
-//            layout_legister.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    recyclerViewClickInterface.onItemClick(getAdapterPosition());
-////                    int position = getAdapterPosition();
-////
-////
-////                    if(listener != null){
-////                        listener.onItemClick(CumstomViewHolder.this, v, position);
-////                    }
-//                }
-//            });
-//            itemView.setOnLongClickListener((v) -> {
-//                recyclerViewClickInterface.onLongItemClick(getAdapterPosition());
-//
-//                return true;
-//            });
         }
     }
 }

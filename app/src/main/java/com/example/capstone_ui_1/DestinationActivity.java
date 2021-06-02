@@ -137,7 +137,6 @@ public class DestinationActivity extends AppCompatActivity implements RecyclerVi
     public void onLongItemClick(int position) {
         chosuns.remove(position);
         lalos.remove(position);
-//        CustomAdapter.notifyItemRemoved(position);
     }
 
 }
