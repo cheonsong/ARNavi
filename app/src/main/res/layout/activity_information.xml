@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/map"
+    android:screenOrientation="landscape"
+    tools:context=".InformationActivity">
+
+    <ImageButton
+        android:id="@+id/rotc"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="584dp"
+        android:layout_marginBottom="372dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/s_hall"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginBottom="212dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/professor"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginBottom="284dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backhak"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="232dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/dental"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="284dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/student"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginBottom="244dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/engineering_one"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="508dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/engineering_two"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="540dp"
+        android:layout_marginBottom="312dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/international"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginBottom="224dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/library"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="344dp"
+        android:layout_marginBottom="252dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/social"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="272dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/it"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="436dp"
+        android:layout_marginBottom="304dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/physical"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="544dp"
+        android:layout_marginBottom="132dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/esports"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="396dp"
+        android:layout_marginBottom="264dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/i_hall"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="600dp"
+        android:layout_marginBottom="108dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/business"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="424dp"
+        android:layout_marginBottom="352dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/art"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginBottom="172dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/main"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginBottom="304dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/medical_one"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="500dp"
+        android:layout_marginBottom="192dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/medical_three"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="500dp"
+        android:layout_marginBottom="164dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/space"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="620dp"
+        android:layout_marginBottom="284dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ship_marine"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="668dp"
+        android:layout_marginBottom="264dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/law"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="452dp"
+        android:layout_marginBottom="352dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/bio"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="464dp"
+        android:layout_marginBottom="148dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/natural"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="604dp"
+        android:layout_marginBottom="164dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/nurse"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="696dp"
+        android:layout_marginBottom="204dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/hospital"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="696dp"
+        android:layout_marginBottom="132dp"
+        android:background="@drawable/map_marker_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

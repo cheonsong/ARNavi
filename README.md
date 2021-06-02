@@ -19,6 +19,9 @@
 ### 기술 스택 및 개발 환경
 ![기술 스택](https://user-images.githubusercontent.com/59193640/120098590-c2e22d80-c171-11eb-8549-b9ff0c8f9f19.png)
 
+### 세부정보 확인 기능
+- 캠퍼스맵을 기초로 버튼 클릭 시 다이얼로그에 건물 정보를 표시해준다.([InformationActivity.java](./app/src/main/java/com/example/capstone_ui_1/Informationctivity.java))
+
 ### 목적지 선택 기능
 - 건물, 학과, 교수님에 대한 정보로 목적지를 선택 가능
 - 키워드만 검색해도 검색 내용이 나오도록 설정(자동완성 기능)([DestinationActivity.java](./app/src/main/java/com/example/capstone_ui_1/DestinationActivity.java))
@@ -58,7 +61,25 @@
             return filterResults;
         }
 ```
-
+- 목적지로 선택한 건물정보 출력([MainActivity.java](./app/src/main/java/com/example/capstone_ui_1/MainActivity.java))
+```java
+infoButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onClick(View view) {
+                AlertDialog dialog = new AlertDialog.Builder(MainActivity.this)
+                        .setTitle(building)
+                        .setMessage(msg)
+                        .setNegativeButton("닫기", null)
+                        .show();
+            }
+        });
+```
+- 컨버터를 활용해 DB속 건물명을 영어로 변환 후 해당 건물의 정보를 string.xml 파일에서 가져옴
+```java
+        converter.convertBuildingToEng(building);
+        msg = getString(getResources().getIdentifier(converter.getBName(), "string", getPackageName()));
+```
 ### 지도에서 목적지 선택 기능
 - Mapbox 지도를 활용
 - 지도에서 직접 목적지 선택하기([MainActivity2.java](./app/src/main/java/com/example/capstone_ui_1/MainActivity2.java))
@@ -141,7 +162,8 @@
 - 실제 사용 중인 서비스의 부족한 점을 분석하고 구현
 - 구현 과정에 있어 다양한 기술 스택의 사용
 - 구현 과정에 있어 발생했던 문제점들에 대해 협의를 통한 해결책 모색
-- 초기 목표로 했던 바 모두 달성
+- 유니티의 위치 정확도 개선 필요
+- 세부정보표현 개선 필요
 <br>
 
 ## 참고 문헌
