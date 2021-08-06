@@ -2,6 +2,8 @@
 
 ## 프로젝트명
 **Chosun Navi**<br>
+**조선대학교 SW융합대학 캡스톤디자인 우수성과물 수상**<br>
+[수상 확인하기](https://github.com/cheonsong/Capstone_ARNavi/files/6942920/_ChosunNavi.pdf)<br>
 <br>
 
 ## 프로젝트 소개
